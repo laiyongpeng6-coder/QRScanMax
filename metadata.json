@@ -1,0 +1,8 @@
+{
+  "name": "QR Scan Max",
+  "description": "Barcode Reader and Scanner.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}
