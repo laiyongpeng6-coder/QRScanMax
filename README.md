@@ -1,20 +1,59 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# QRMax - Android QR/Barcode Scanner
 
-# Run and deploy your AI Studio app
+An Android native QR code and barcode scanner application built with **Kotlin** and **Jetpack Compose**.
 
-This contains everything you need to run your app locally.
+## Tech Stack
 
-View your app in AI Studio: https://ai.studio/apps/8b2e63bc-ad82-4a43-8253-52989a5b15fd
+| Category | Technology |
+|----------|------------|
+| Language | Kotlin 2.2.10 |
+| UI | Jetpack Compose + Material 3 |
+| Camera | CameraX 1.4.1 |
+| Barcode Detection | Google ML Kit Barcode Scanning 17.3.0 |
+| Navigation | Navigation Compose 2.8.8 |
+| Architecture | MVVM + StateFlow |
+| Build | Gradle 9.4.1, AGP 9.2.1 |
+| Min SDK | API 24 (Android 7.0) |
+| Target SDK | API 36 (Android 15) |
 
-## Run Locally
+## Project Structure
 
-**Prerequisites:**  Node.js
+```
+app/src/main/java/com/example/qrmax/
+├── MainActivity.kt
+├── data/
+│   ├── model/ScannedItem.kt
+│   └── parser/QRParser.kt
+├── viewmodel/
+│   └── AppViewModel.kt
+├── ui/
+│   ├── screens/
+│   │   ├── SplashScreen.kt
+│   │   ├── OnboardingScreen.kt
+│   │   ├── ScannerScreen.kt
+│   │   ├── HistoryScreen.kt
+│   │   ├── ResultScreen.kt
+│   │   ├── GeneratorScreen.kt
+│   │   ├── CreateQRScreen.kt
+│   │   ├── CreateBarcodeScreen.kt
+│   │   ├── BeautifyScreen.kt
+│   │   └── SettingsScreen.kt
+│   ├── components/
+│   │   ├── ScanningOverlay.kt
+│   │   ├── BottomNavBar.kt
+│   │   └── MockNativeAd.kt
+│   └── theme/
+│       ├── Color.kt
+│       ├── Theme.kt
+│       └── Type.kt
+```
 
+## Features
+- QR/Barcode scanning with CameraX + ML Kit
+- Beautify workspace with custom colors, icons, and templates
+- Scan history with detailed results
+- Multi-format support: URL, WiFi, vCard, Geo, ISBN, UPC, EAN-13
+- Smooth animations with AnimatedContent
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Build
+Open in Android Studio, sync Gradle, and run on device/emulator with API 24+.
